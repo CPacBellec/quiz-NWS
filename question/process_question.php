@@ -2,11 +2,11 @@
 include 'dbConnect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $questionText = $_POST['question_text'];
-    $option1 = $_POST['option1'];
-    $option2 = $_POST['option2'];
-    $option3 = $_POST['option3'];
-    $correctOption = $_POST['correct_option'];
+    $questionText = mysqli_real_escape_string($conn, $_POST['question_text']);
+    $option1 = mysqli_real_escape_string($conn, $_POST['option1']);
+    $option2 = mysqli_real_escape_string($conn, $_POST['option2']);
+    $option3 = mysqli_real_escape_string($conn, $_POST['option3']);
+    $correctOption = intval($_POST['correct_option']);
 
     $sql = "INSERT INTO questions (question_text, option1, option2, option3, correct_option)
             VALUES ('$questionText', '$option1', '$option2', '$option3', $correctOption)";

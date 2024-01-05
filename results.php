@@ -33,7 +33,7 @@ $playersResults = getPlayersResults($sessionInfo['id']);
 </head>
 <body>
     <h1>Résultats du Quizz</h1>
-    <p>Session Code: <?php echo $sessionCode; ?></p>
+    <p>Session Code: <?php echo htmlspecialchars($sessionCode, ENT_QUOTES, 'UTF-8'); ?></p>
 
     <div id="results-container">
         <table>
@@ -43,8 +43,8 @@ $playersResults = getPlayersResults($sessionInfo['id']);
             </tr>
             <?php foreach ($playersResults as $player): ?>
                 <tr>
-                    <td><?php echo $player['player_name']; ?></td>
-                    <td><?php echo $player['score']; ?></td>
+                    <td><?php echo htmlspecialchars($player['player_name'], ENT_QUOTES, 'UTF-8'); ?></td>
+                    <td><?php echo htmlspecialchars($player['score'], ENT_QUOTES, 'UTF-8'); ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>

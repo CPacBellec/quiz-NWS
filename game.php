@@ -1,4 +1,9 @@
 <?php
+session_start([
+    'cookie_secure' => true, // Assurez-vous que les cookies de session sont sécurisés (HTTPS)
+    'cookie_httponly' => true, // Empêche l'accès aux cookies via JavaScript
+    'use_strict_mode' => true // Active le mode strict pour les sessions
+]);
 include 'dbConnect.php';
 include 'functions.php';
 
