@@ -13,7 +13,7 @@ if (empty($sessionCode)) {
     $sessionCode = createSession();
 }
 
-$playerName = "Player" . rand(1, 100);
+$playerName = "Joueur" . rand(1, 100);
 $playerId = joinSession($sessionCode, $playerName);
 ?>
 <!DOCTYPE html>
